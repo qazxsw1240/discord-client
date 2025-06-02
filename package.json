@@ -1,0 +1,24 @@
+{
+  "name": "discord-client",
+  "version": "0.0.1",
+  "description": "discord client",
+  "license": "MIT",
+  "author": "qazxsw1240",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "prestart": "tsc",
+    "start": "node --env-file=.env --experimental-strip-types build/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@discordjs/voice": "^0.18.0",
+    "discord.js": "^14.19.3",
+    "jest": "^29.7.0",
+    "libsodium-wrappers": "^0.7.15",
+    "typescript": "^5.8.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.29"
+  }
+}
