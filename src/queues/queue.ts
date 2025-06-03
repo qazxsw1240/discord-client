@@ -1,7 +1,7 @@
 import EventEmitter from "node:events";
-import { MessageReceiverNotFoundError, MessageSenderNotFoundError } from "./error";
-import { MessageReceiver } from "./receiver";
-import { MessageSender } from "./sender";
+import { MessageReceiverNotFoundError, MessageSenderNotFoundError } from "./error.js";
+import { MessageReceiver } from "./receiver.js";
+import { MessageSender } from "./sender.js";
 
 
 export interface QueuedMessage<T> {
