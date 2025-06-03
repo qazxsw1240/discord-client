@@ -1,5 +1,5 @@
-import { MessageReceiverTopicError } from "./error";
-import type { MessageTopicHolder, QueuedMessage } from "./queue";
+import { MessageReceiverTopicError } from "./error.js";
+import type { MessageTopicHolder, QueuedMessage } from "./queue.js";
 
 export class MessageReceiver implements MessageTopicHolder {
     private readonly _receivers = new Set<(data: QueuedMessage<any>) => void>();
@@ -40,7 +40,7 @@ export class MessageReceiver implements MessageTopicHolder {
     }
 
     private async startExecution() {
-        if (this._idle) {
+        if (!this._idle) {
             return;
         }
         try {

@@ -1,5 +1,10 @@
 import type EventEmitter from "node:events";
-import type { MessageQueueEventMap, MessageTopicHolder, QueuedMessage } from "./queue";
+import {
+    MessageQueueSendEvent,
+    type MessageQueueEventMap,
+    type MessageTopicHolder,
+    type QueuedMessage
+} from "./queue.js";
 
 const createQueuedMessage = <T>(sender: string, receiver: string, data: T): QueuedMessage<T> => {
     const now = new Date();
@@ -28,6 +33,9 @@ export class MessageSender implements MessageTopicHolder {
     }
 
     public send<T>(topic: string, data: T): void {
-        this._eventEmitter.emit(topic, createQueuedMessage(this.topic, topic, data));
+        this._eventEmitter.emit(
+            MessageQueueSendEvent,
+            topic,
+            createQueuedMessage(this.topic, topic, data));
     }
 }
