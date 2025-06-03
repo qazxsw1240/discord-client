@@ -1,7 +1,7 @@
-import { MessageReceiverNotFoundError, type MessageReceiverTopicError } from "./error";
-import { MessageQueue, type MessageTopicHolder } from "./queue";
-import { MessageReceiver } from "./receiver";
-import { MessageSender } from "./sender";
+import { MessageReceiverNotFoundError, type MessageReceiverTopicError } from "./error.js";
+import { MessageQueue, type MessageTopicHolder } from "./queue.js";
+import { MessageReceiver } from "./receiver.js";
+import { MessageSender } from "./sender.js";
 
 
 export {
