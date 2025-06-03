@@ -9,7 +9,7 @@
   "scripts": {
     "prestart": "tsc",
     "start": "node --env-file=.env --experimental-strip-types build/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "dependencies": {
     "@discordjs/voice": "^0.18.0",
@@ -19,6 +19,9 @@
     "typescript": "^5.8.3"
   },
   "devDependencies": {
-    "@types/node": "^22.15.29"
+    "@jest/globals": "30.0.0-beta.3",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.15.29",
+    "ts-jest": "^29.3.4"
   }
 }
